@@ -1,0 +1,148 @@
+/* ===========================================================
+   CSE444 - Project 9: A TV Room
+   Stylesheet for UI overlay (loader, info panel, HUD)
+   =========================================================== */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  height: 100%;
+}
+
+canvas { display: block; }
+
+/* ---------- Loading screen ---------- */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #1b1f2a 0%, #05060a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader-box {
+  text-align: center;
+  color: #eaf4ff;
+}
+.tv-icon {
+  font-size: 54px;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 0.85; }
+  50%      { transform: scale(1.1); opacity: 1; }
+}
+.loader-title {
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #9fd3ff;
+}
+.loader-bar {
+  margin-top: 16px;
+  width: 220px;
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+#loaderProgress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4fc3f7, #7fd7ff);
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+/* ---------- Info panel ---------- */
+#info {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  color: #eaf4ff;
+  background: rgba(12, 16, 24, 0.72);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(127, 215, 255, 0.25);
+  border-radius: 10px;
+  padding: 12px 16px;
+  max-width: 300px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
+#info h3 {
+  margin: 0 0 8px 0;
+  font-size: 13.5px;
+  color: #7fd7ff;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+#info ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12.5px;
+  line-height: 1.9;
+}
+kbd {
+  display: inline-block;
+  min-width: 16px;
+  text-align: center;
+  padding: 1px 6px;
+  margin: 0 1px;
+  background: #22283a;
+  border: 1px solid #3a4257;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #cfe8ff;
+}
+
+/* ---------- HUD (channel / power badges) ---------- */
+#hud {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+#hud span {
+  background: rgba(12, 16, 24, 0.72);
+  border: 1px solid rgba(127, 215, 255, 0.25);
+  color: #eaf4ff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+#powerBadge.off {
+  color: #ff8b8b;
+  border-color: rgba(255, 139, 139, 0.35);
+}
+
+/* ---------- Crosshair ---------- */
+#crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  z-index: 10;
+  pointer-events: none;
+}

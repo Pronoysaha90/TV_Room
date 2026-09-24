@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CSE444 - Project 9: A TV Room</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="loader-box">
+      <div class="tv-icon">📺</div>
+      <div class="loader-title">Loading TV Room...</div>
+      <div class="loader-bar"><div id="loaderProgress"></div></div>
+    </div>
+  </div>
+
+  <!-- On-screen instructions -->
+  <div id="info">
+    <h3>CSE444 &middot; Project 9 &middot; A TV Room</h3>
+    <ul>
+      <li><kbd>W</kbd><kbd>S</kbd> Move forward / back</li>
+      <li><kbd>A</kbd><kbd>D</kbd> or <kbd>&larr;</kbd><kbd>&rarr;</kbd> Turn</li>
+      <li>🖱️ Move mouse left/right &rarr; light orbits the TV</li>
+      <li><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Select channel &nbsp; <kbd>T</kbd> Cycle channel</li>
+      <li><kbd>Space</kbd> Turn TV on / off</li>
+      <li><kbd>N</kbd> Toggle day / night mood lighting</li>
+    </ul>
+  </div>
+
+  <div id="hud">
+    <span id="channelBadge">CH 1</span>
+    <span id="powerBadge">TV: ON</span>
+  </div>
+
+  <div id="crosshair"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
