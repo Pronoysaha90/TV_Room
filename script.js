@@ -1,31 +1,3 @@
-/* ============================================================
-   CSE444 Computer Graphics & Animation Lab - Final Project
-   Project 9: A TV Room
-   File: script.js (all Three.js logic lives here)
-
-   ------ MUST-DO REQUIREMENTS (assignment) ------
-   1. LCD TV screen [with texture]             -> screen mesh + channelTextures
-   2. TV stand [with texture]                  -> stand mesh + woodTexture
-   3. Keyboard: camera moves inside the room   -> WASD / arrow keys
-   4. Mouse interaction                        -> mouseX orbits the point light
-   5. TV screen texture changes                -> channel cycling (auto + manual)
-   6. Light rotates around the TV              -> pointLight orbit driven by mouse
-   7. Custom vertex shader                     -> screenMaterial vertexShader
-   8. Custom fragment shader                   -> screenMaterial fragmentShader
-      (scanlines + glow + power on/off fade)
-   9. Lighting                                 -> Ambient + Point (orbit) + Spot + ceiling lamp
-   10. Perspective projection                  -> THREE.PerspectiveCamera
-   11. Texture for every object                -> canvas-based procedural textures
-   12. Animation                                -> light orbit, texture cycle, shader flicker
-
-   ------ BONUS / ENHANCEMENT (adds aesthetics, not mandatory) ------
-   - Sofa, carpet, curtains, TV cabinet drawers, speakers, TV remote,
-     wall painting, ceiling lamp
-   - Extra interaction: 1/2/3 direct channel select, Space = TV on/off,
-     N = day / night mood lighting toggle
-   - Loading screen + styled HUD (channel + power badges)
-   ============================================================ */
-
 // ---------- basic setup ----------
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0d0f14);
